@@ -16,6 +16,7 @@ function LandingNews() {
                 query: active,
             })
             .then(function (res) {
+                console.log(res);
                 setNews(res.data);
             })
             .catch(function (err) {
