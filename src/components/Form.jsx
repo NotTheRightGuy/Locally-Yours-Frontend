@@ -136,7 +136,7 @@ export default function Form(props) {
                         </form>
                     </div>
 
-                <img src="https://images.pexels.com/photos/265642/pexels-photo-265642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className='h-[787px] w-[745px] translate-y-[-54px] ' alt="" />
+                <img src="https://images.pexels.com/photos/265642/pexels-photo-265642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className='h-[787px] w-[745px] translate-y-[-87px] ' alt="" />
                 </div>
             </div>
         </div>
