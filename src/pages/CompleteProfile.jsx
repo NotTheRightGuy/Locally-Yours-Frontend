@@ -1,5 +1,10 @@
+import NavBar from "../components/Navbar";
 function ProfileCompletion() {
-    return;
+    return (
+        <div>
+            <NavBar />
+        </div>
+    );
 }
 
 export default ProfileCompletion;
