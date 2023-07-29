@@ -15,13 +15,8 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/newsfeed" element={<NewsFeed />} />
                     <Route path="/signin" element={<SignInPage />} />
                     <Route path="/signup" element={<SignUpPage />} />
-                    <Route
-                        path="category-selection"
-                        element={<CategorySelection />}
-                    />
                 </Routes>
             </BrowserRouter>
         </ClerkProvider>
