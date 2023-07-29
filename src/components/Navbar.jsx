@@ -17,7 +17,7 @@ function NavBar() {
             </div>
             <div className="btn-section flex gap-3 font-bebas text-lg">
                 <button
-                    onClick={() => (window.location.href = "/newsfeed")}
+                    onClick={() => (window.location.href = "/complete-profile")}
                     className="border-2  px-4 py-2 rounded-full bold hover:bg-black hover:text-white transition-all hover:scale-105"
                 >
                     GET STARTED

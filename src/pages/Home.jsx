@@ -2,6 +2,7 @@ import NavBar from "../components/Navbar";
 import LandingNews from "../components/LandingNews";
 import { useRef, useEffect } from "react";
 import TypeWriter from "typewriter-effect/dist/core";
+import { SignOutButton } from "@clerk/clerk-react";
 
 function Home() {
     const typewriter = useRef(null);
