@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 function LandingNews() {
-    const url = "https://locally-yours.onrender.com/";
+    const url = "https://locally-yours.onrender.com";
     const [loading, setLoading] = useState(true);
     const [news, setNews] = useState([]);
     const [active, setActive] = useState("technology");
