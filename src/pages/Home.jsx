@@ -37,10 +37,10 @@ function Home() {
                     SIMPLIFYING THE NEWS FOR YOU
                 </div>
                 <div className="w-[50vw] font-poppins font-semibold">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Cumque mollitia inventore, dolorum perspiciatis numquam sit
-                    iure ullam unde veniam maxime sequi eos odio atque voluptate
-                    error autem! Deserunt, placeat fugit!
+                    Are you tired of sifting through endless news articles to
+                    find the ones that are relevant to you? With our tailored
+                    news service, you can get the news that matters to you,
+                    delivered right where you need it.
                 </div>
             </div>
             <LandingNews />
