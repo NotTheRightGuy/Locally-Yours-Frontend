@@ -1,6 +1,6 @@
-import { SignedIn } from "@clerk/clerk-react";
+import { SignOutButton } from "@clerk/clerk-react";
 function NewsFeed() {
-    return;
+    return <SignOutButton />;
 }
 
 export default NewsFeed;
