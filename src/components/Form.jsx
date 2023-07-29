@@ -43,8 +43,13 @@ export default function Form(props) {
             {/* <NavBar/> */}
 
             <div className=" justify-center items-center rounded-lg w-full py-4 ">
-                <div className='font-poppins font-bold text-3xl ml-12' >
-                    LOCALLY YOURS
+                <div className='flex gap-2 font-poppins  text-3xl ml-12 border-2 w-fit p-2 border-black' >
+                    <div className='bg-black text-white font-light p-2'>
+                        LOCALLY
+                    </div>
+                    <div className='font-bold p-2'>
+                        YOURS
+                    </div>
                 </div>
                 <div className='flex justify-between '>
                     <div className='w-full flex flex-col mt-20 items-center'>
