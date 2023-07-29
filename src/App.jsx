@@ -2,6 +2,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import NewsFeed from "./pages/NewsFeed";
 import ProfileCompletion from "./pages/CompleteProfile";
+import UpdateProfile from "./pages/UpdateProfile";
 
 import { ClerkProvider } from "@clerk/clerk-react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -13,6 +14,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/newsfeed" element={<NewsFeed />} />
+                    <Route path="/updateProfile" element={<UpdateProfile />} />
                 </Routes>
             </BrowserRouter>
         </ClerkProvider>

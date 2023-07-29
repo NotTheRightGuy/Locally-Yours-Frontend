@@ -9,6 +9,7 @@ function LandingNews() {
     const [news, setNews] = useState([]);
     const [active, setActive] = useState("technology");
 
+    
 
     useEffect(() => {
         setLoading(true);
@@ -93,6 +94,7 @@ function LandingNews() {
                     </Stack>
                 ) : (
                     news.map((item, id) => {
+                        console.log(id)
                         return (
                             <NewsCard
                                 key={id}
