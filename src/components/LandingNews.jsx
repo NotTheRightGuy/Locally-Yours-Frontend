@@ -9,6 +9,7 @@ function LandingNews() {
     const [news, setNews] = useState([]);
     const [active, setActive] = useState("technology");
 
+
     useEffect(() => {
         setLoading(true);
         axios
