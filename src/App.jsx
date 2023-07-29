@@ -6,7 +6,7 @@ import CategorySelection from "./pages/CategorySelection";
 import SignUpPage from "./pages/SignUpPage";
 import SignInPage from "./pages/SignInPage";
 
-import { ClerkProvider } from "@clerk/clerk-react";
+import { ClerkProvider, SignOutButton } from "@clerk/clerk-react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -17,6 +17,14 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/signin" element={<SignInPage />} />
                     <Route path="/signup" element={<SignUpPage />} />
+                    <Route
+                        path="/complete-profile"
+                        element={<ProfileCompletion />}
+                    />
+                    <Route
+                        path="/category-selection"
+                        element={<CategorySelection />}
+                    />
                 </Routes>
             </BrowserRouter>
         </ClerkProvider>

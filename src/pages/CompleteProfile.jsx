@@ -8,18 +8,28 @@ import {
 } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
 import axios from "axios";
+import { useUser } from "@clerk/clerk-react";
+import { useEffect } from "react";
 
 function ProfileCompletion() {
+    const user = useUser();
+    useEffect(() => {
+        if (user) {
+            console.log(user);
+        }
+    }, [user]);
     const url = "http://localhost:3000";
     const toast = useToast();
     const updateProfile = (
-        email,
         first_name,
         last_name,
         adr_line_1,
         adr_line_2,
         pincode
     ) => {
+        const email =
+            user.user.primaryEmailAddress.emailAddress ||
+            user.user.emailAddresses.emailAddress;
         axios
             .post(`${url}/users`, {
                 email,
@@ -64,11 +74,11 @@ function ProfileCompletion() {
                     </div>
                     <form action="">
                         <FormControl isRequired>
-                            <FormLabel>Email Address</FormLabel>
+                            {/* <FormLabel>Email Address</FormLabel>
                             <Input type="email" width={"40vw"} id="email" />
                             <FormHelperText>
                                 We will Never Share your email
-                            </FormHelperText>
+                            </FormHelperText> */}
                             <div className="flex gap-6 mt-4">
                                 <div>
                                     <FormLabel>First Name</FormLabel>
@@ -114,8 +124,6 @@ function ProfileCompletion() {
                         <button
                             onClick={(e) => {
                                 e.preventDefault();
-                                const email =
-                                    document.getElementById("email").value;
                                 const first_name =
                                     document.getElementById("firstName").value;
                                 const last_name =
@@ -126,8 +134,8 @@ function ProfileCompletion() {
                                     document.getElementById("adrLine2").value;
                                 const pincode =
                                     document.getElementById("pincode").value;
+
                                 updateProfile(
-                                    email,
                                     first_name,
                                     last_name,
                                     adr_line_1,

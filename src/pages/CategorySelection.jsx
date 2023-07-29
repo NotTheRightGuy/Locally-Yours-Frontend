@@ -2,11 +2,12 @@ import NavBar from "../components/Navbar";
 import { CheckboxGroup, Checkbox } from "@chakra-ui/react";
 import { useState } from "react";
 import axios from "axios";
+import { useUser } from "@clerk/clerk-react";
+
 import { useToast } from "@chakra-ui/react";
 function CategorySelection() {
     const toast = useToast();
-    //! Change this email to take user logged in mail
-    const mail = "janmejaychatterjee@gmail.com";
+    const user = useUser();
     const url = "http://localhost:3000";
     const [technology, setTechnology] = useState(false);
     const [sports, setSports] = useState(false);
@@ -15,19 +16,9 @@ function CategorySelection() {
     const [anime, setAnime] = useState(false);
     const handleCategory = (e) => {
         e.preventDefault();
-        // console.log(
-        //     mail,
-        //     technology,
-        //     document.getElementById("technology-time").value,
-        //     sports,
-        //     document.getElementById("sports-time").value,
-        //     politics,
-        //     document.getElementById("politics-time").value,
-        //     fashion,
-        //     document.getElementById("fashion-time").value,
-        //     anime,
-        //     document.getElementById("anime-time").value
-        // );
+        const mail =
+            user.user.primaryEmailAddress.emailAddress ||
+            user.user.emailAddresses.emailAddress;
         const tech_time = document.getElementById("technology-time").value;
         const sports_time = document.getElementById("sports-time").value;
         const politics_time = document.getElementById("politics-time").value;
