@@ -2,7 +2,12 @@ function NavBar() {
     return (
         <nav className="flex justify-between h-16 items-center px-10 border-b-2">
             <div className="nav-links flex gap-6 font-bebas text-lg">
-                <div className="hover:underline transition-all cursor-pointer">
+                <div
+                    className="hover:underline transition-all cursor-pointer"
+                    onClick={() => {
+                        window.location.href = "/";
+                    }}
+                >
                     HOME
                 </div>
                 <div className="hover:underline transition-all cursor-pointer">

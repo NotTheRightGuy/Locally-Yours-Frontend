@@ -2,6 +2,9 @@ import "./App.css";
 import Home from "./pages/Home";
 import NewsFeed from "./pages/NewsFeed";
 import ProfileCompletion from "./pages/CompleteProfile";
+import CategorySelection from "./pages/CategorySelection";
+import SignUpPage from "./pages/SignUpPage";
+import SignInPage from "./pages/SignInPage";
 
 import { ClerkProvider } from "@clerk/clerk-react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -13,9 +16,11 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/newsfeed" element={<NewsFeed />} />
+                    <Route path="/signin" element={<SignInPage />} />
+                    <Route path="/signup" element={<SignUpPage />} />
                     <Route
-                        path="complete-profile"
-                        element={<ProfileCompletion />}
+                        path="category-selection"
+                        element={<CategorySelection />}
                     />
                 </Routes>
             </BrowserRouter>
