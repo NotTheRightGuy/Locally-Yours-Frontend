@@ -35,7 +35,8 @@ function PersonalizeNews({ data }) {
     };
 
     const getLocalNews = async (e) => {
-        const url = "http://localhost:3000";
+        const url = "https://locally-yours.onrender.com";
+
         axios
             .post(`${url}/news/query`, { query: city })
             .then((res) => {

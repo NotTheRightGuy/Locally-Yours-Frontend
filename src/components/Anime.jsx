@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 function Anime() {
     const [animeNews, setAnimeNews] = useState([]);
-    const url = "http://localhost:3000";
+    const url = "https://locally-yours.onrender.com";
+
     const getAnimeNews = async (e) => {
         axios
             .post(`${url}/news/query`, { query: "anime" })

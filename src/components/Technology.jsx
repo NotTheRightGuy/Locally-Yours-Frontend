@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 function Technology() {
     const [technologyNews, setTechnologyNews] = useState([]);
-    const url = "http://localhost:3000";
+    const url = "https://locally-yours.onrender.com";
     const getTechnologyNews = async (e) => {
         axios
             .post(`${url}/news/query`, { query: "technology" })

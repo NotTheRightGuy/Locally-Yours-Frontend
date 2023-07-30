@@ -18,7 +18,7 @@ function ProfileCompletion() {
             console.log(user);
         }
     }, [user]);
-    const url = "http://localhost:3000";
+    const url = "https://locally-yours.onrender.com";
     const toast = useToast();
     const updateProfile = (
         first_name,

@@ -9,7 +9,7 @@ function NewsFeed() {
     const [userData, setUserData] = useState({});
     const [email, setEmail] = useState("");
     const user = useUser();
-    const url = "http://localhost:3000";
+    const url = "https://locally-yours.onrender.com";
 
     function printTimeAndDate() {
         const now = moment();

@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 function Fashion() {
     const [fashionNews, setFashionNews] = useState([]);
-    const url = "http://localhost:3000";
+    const url = "https://locally-yours.onrender.com";
+
     const getFashionNews = async (e) => {
         axios
             .post(`${url}/news/query`, { query: "fashion" })
