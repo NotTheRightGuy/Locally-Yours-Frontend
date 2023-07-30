@@ -5,7 +5,6 @@ import axios from "axios";
 
 function LandingNews() {
     const url = "https://locally-yours.onrender.com";
-    // const url = "http://localhost:3000";
     const [loading, setLoading] = useState(true);
     const [news, setNews] = useState([]);
     const [active, setActive] = useState("technology");
