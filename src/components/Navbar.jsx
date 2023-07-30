@@ -1,4 +1,9 @@
+import { useUser } from "@clerk/clerk-react";
+import { useEffect } from "react";
+import SignOutBtn from "./SignOutBtn";
+
 function NavBar() {
+    const user = useUser();
     return (
         <nav className="flex justify-between h-16 items-center px-10 border-b-2">
             <div className="nav-links flex gap-6 font-bebas text-lg">
@@ -10,7 +15,12 @@ function NavBar() {
                 >
                     HOME
                 </div>
-                <div className="hover:underline transition-all cursor-pointer">
+                <div
+                    className="hover:underline transition-all cursor-pointer"
+                    onClick={() => {
+                        window.location.href = "/newsfeed";
+                    }}
+                >
                     NEWS
                 </div>
                 <div className="hover:underline transition-all cursor-pointer">
@@ -27,6 +37,7 @@ function NavBar() {
                 >
                     GET STARTED
                 </button>
+                <SignOutBtn hidden={user.isSignedIn ? "" : "hidden"} />
             </div>
         </nav>
     );

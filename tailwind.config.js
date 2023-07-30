@@ -18,6 +18,7 @@ export default {
                 poppins: ["Poppins", "sans-serif"],
                 bebas: ["Bebas Neue", "sans-serif"],
                 bree: ["Bree Serif", "sans-serif"],
+                eb: ["EB Garamond", "sans-serif"],
             },
         },
     },

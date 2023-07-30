@@ -64,7 +64,7 @@ function CategorySelection() {
                     isClosable: true,
                 });
                 setTimeout(() => {
-                    // window.location.href = "/category-selection";
+                    window.location.href = "/newsfeed";
                 }, 3000);
                 console.log(res);
             })

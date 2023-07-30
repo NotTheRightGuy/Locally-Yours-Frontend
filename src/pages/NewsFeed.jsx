@@ -1,74 +1,72 @@
-import CardHorizontal from "../components/CardHorizontal.jsx"
-import CardVertical from "../components/CardVertical.jsx"
-import FilterBar from "../components/FilterBar.jsx" 
-import { useState,useEffect } from "react";
-import axios from "axios"
-import {
-    SignedIn,
-    SignedOut,
-    UserButton,
-    useUser,
-    RedirectToSignIn,
-    SignOutButton,
-} from "@clerk/clerk-react";
+import NavBar from "../components/Navbar";
+import { useState, useEffect } from "react";
+import { useUser } from "@clerk/clerk-react";
+import axios from "axios";
+import moment from "moment/moment";
+import { GiHamburgerMenu } from "react-icons/gi";
+import PersonalizeNews from "../components/PersonalizeNews";
 function NewsFeed() {
+    const [userData, setUserData] = useState({});
+    const [email, setEmail] = useState("");
+    const user = useUser();
+    const url = "http://localhost:3000";
 
-    const url = "https://locally-yours.onrender.com";
-    const [loading, setLoading] = useState(true);
-    const [news, setNews] = useState([]);
-    const [active, setActive] = useState("technology");
+    function printTimeAndDate() {
+        const now = moment();
+        const formattedTime = now.format("HH:mm A");
+        const formattedDate = now.format("d MMM");
+
+        return `It's ${formattedTime} of 30th July`;
+    }
 
     useEffect(() => {
-        setLoading(true);
-        axios
-            .post(`${url}/news/query`, {
-                query: active,
-            })
-            .then(function (res) {
-                console.log(res);
-                setNews(res.data);
-            })
-            .catch(function (err) {
-                console.log(err);
-            });
-        setLoading(false);
-    }, [active]);    
-
-
+        if (user.isSignedIn) {
+            setEmail(user.user.primaryEmailAddress.emailAddress);
+            // console.log(user.user.emailAddresses[0].emailAddress);
+        }
+        if (email) {
+            axios
+                .post(`${url}/users/email`, { email })
+                .then((res) => {
+                    setUserData(res.data[0]);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
+    }, [user.isSignedIn, email]);
     return (
         <div>
-            <SignedIn>
-                <FilterBar/>
-                <section className="flex m-16 mt-0 rounded-2xl p-16">
-                    {/* <div className="horizontal flex flex-col basis-2/3 gap-6 "> */}
-                    {news.map((item, id) => {
-                        return (
-                            // console.log(item),
-                            <CardHorizontal
-                                key={id}
-                                title={item.title}
-                                description={item.description}
-                                url={item.url}
-                                urlToImage={item.urlToImage}
-                                publishedAt={item.publishedAt}
-                                source={item.source}
-                                height={item.height}
-                                width={item.width}
-                                />
-                            );
-                        })
-                    }  
-                    {/* </div> */}
-                    {/* <div className="basis-1/3">
-                        <CardVertical
+            <NavBar />
+            <section className="news-section px-4 mt-4">
+                <div className="greetings flex items-center relative">
+                    <div>
+                        <span className="greetings font-rubik italic text-6xl mr-5">
+                            Hello
+                        </span>
+                        <span className="font-rubik text-5xl italic">
+                            {userData.first_name}
+                        </span>{" "}
+                        <span className="font-rubik text-5xl italic">
+                            {userData.last_name}
+                        </span>
+                    </div>
+                    <div className="hamburger-menu absolute right-0 top-8">
+                        <GiHamburgerMenu
+                            onClick={() =>
+                                (window.location.href = "/complete-profile")
+                            }
+                            height={"50px"}
+                            className="cursor-pointer text-3xl hover:-translate-x-2 transition-all"
                         />
-                    </div> */}
-                </section>                
-            </SignedIn>
-            <SignedOut>
-                <RedirectToSignIn />
-            </SignedOut>
+                    </div>
+                </div>
+                <div className="font-poppins text-sm font-bold mb-10">
+                    {printTimeAndDate()}
+                </div>
 
+                <PersonalizeNews data={userData} />
+            </section>
         </div>
     );
 }

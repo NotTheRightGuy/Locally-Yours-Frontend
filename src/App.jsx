@@ -25,6 +25,7 @@ function App() {
                         path="/category-selection"
                         element={<CategorySelection />}
                     />
+                    <Route path="/newsfeed" element={<NewsFeed />} />
                 </Routes>
             </BrowserRouter>
         </ClerkProvider>
