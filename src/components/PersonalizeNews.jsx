@@ -46,6 +46,7 @@ function PersonalizeNews({ data }) {
             .catch((err) => {
                 console.log(err);
             });
+        console.log(localNews);
     };
 
     useEffect(() => {

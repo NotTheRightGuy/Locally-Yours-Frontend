@@ -31,7 +31,7 @@ function ProfileCompletion() {
             user.user.primaryEmailAddress.emailAddress ||
             user.user.emailAddresses.emailAddress;
         axios
-            .put(`${url}/users/email`, {
+            .post(`${url}/users`, {
                 email,
                 first_name,
                 last_name,
