@@ -5,6 +5,7 @@ import ProfileCompletion from "./pages/CompleteProfile";
 import CategorySelection from "./pages/CategorySelection";
 import SignUpPage from "./pages/SignUpPage";
 import SignInPage from "./pages/SignInPage";
+import ChangePinCode from "./pages/UpDatePincode";
 
 import { ClerkProvider, SignOutButton } from "@clerk/clerk-react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -26,6 +27,7 @@ function App() {
                         element={<CategorySelection />}
                     />
                     <Route path="/newsfeed" element={<NewsFeed />} />
+                    <Route path="/change-pincode" element={<ChangePinCode />} />
                 </Routes>
             </BrowserRouter>
         </ClerkProvider>

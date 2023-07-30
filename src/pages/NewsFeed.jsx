@@ -54,7 +54,7 @@ function NewsFeed() {
                     <div className="hamburger-menu absolute right-0 top-8">
                         <GiHamburgerMenu
                             onClick={() =>
-                                (window.location.href = "/complete-profile")
+                                (window.location.href = "/change-pincode")
                             }
                             height={"50px"}
                             className="cursor-pointer text-3xl hover:-translate-x-2 transition-all"

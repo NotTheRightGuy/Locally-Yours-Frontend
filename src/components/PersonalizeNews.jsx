@@ -35,6 +35,7 @@ function PersonalizeNews({ data }) {
     };
 
     const getLocalNews = async (e) => {
+        console.log(city);
         const url = "http://localhost:3000";
         axios
             .post(`${url}/news/query`, { query: city })
