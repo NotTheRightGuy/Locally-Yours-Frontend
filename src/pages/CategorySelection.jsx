@@ -8,7 +8,7 @@ import { useToast } from "@chakra-ui/react";
 function CategorySelection() {
     const toast = useToast();
     const user = useUser();
-    const url = "http://localhost:3000";
+    const url = "https://locally-yours.onrender.com";
     const [technology, setTechnology] = useState(false);
     const [sports, setSports] = useState(false);
     const [politics, setPolitics] = useState(false);
